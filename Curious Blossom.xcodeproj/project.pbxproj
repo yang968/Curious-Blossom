@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7091AA601FB3BE7B0051E6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091AA5F1FB3BE7B0051E6AA /* AppDelegate.swift */; };
+		7091AA621FB3BE7B0051E6AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091AA611FB3BE7B0051E6AA /* ViewController.swift */; };
+		7091AA651FB3BE7B0051E6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7091AA631FB3BE7B0051E6AA /* Main.storyboard */; };
+		7091AA671FB3BE7B0051E6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7091AA661FB3BE7B0051E6AA /* Assets.xcassets */; };
+		7091AA6A1FB3BE7B0051E6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7091AA681FB3BE7B0051E6AA /* LaunchScreen.storyboard */; };
+		7091AA721FB3BE9F0051E6AA /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7091AA711FB3BE9F0051E6AA /* FlowerClassifier.mlmodel */; };
+		CD581FEA524BE17562BBD557 /* Pods_Curious_Blossom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FBB00E69BACE1C8CD23BDA /* Pods_Curious_Blossom.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C24BDBA796DD3B063BE9E94 /* Pods-Curious Blossom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curious Blossom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Curious Blossom/Pods-Curious Blossom.release.xcconfig"; sourceTree = "<group>"; };
+		4DFAF54FECB28DAD21DD340C /* Pods-Curious Blossom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Curious Blossom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Curious Blossom/Pods-Curious Blossom.debug.xcconfig"; sourceTree = "<group>"; };
+		7091AA5C1FB3BE7B0051E6AA /* Curious Blossom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curious Blossom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7091AA5F1FB3BE7B0051E6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7091AA611FB3BE7B0051E6AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7091AA641FB3BE7B0051E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7091AA661FB3BE7B0051E6AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7091AA691FB3BE7B0051E6AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7091AA6B1FB3BE7B0051E6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7091AA711FB3BE9F0051E6AA /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		C2FBB00E69BACE1C8CD23BDA /* Pods_Curious_Blossom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Curious_Blossom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7091AA591FB3BE7B0051E6AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD581FEA524BE17562BBD557 /* Pods_Curious_Blossom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22E9872EEE070ED2DFBF9A61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DFAF54FECB28DAD21DD340C /* Pods-Curious Blossom.debug.xcconfig */,
+				4C24BDBA796DD3B063BE9E94 /* Pods-Curious Blossom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7091AA531FB3BE7B0051E6AA = {
+			isa = PBXGroup;
+			children = (
+				7091AA5E1FB3BE7B0051E6AA /* Curious Blossom */,
+				7091AA5D1FB3BE7B0051E6AA /* Products */,
+				22E9872EEE070ED2DFBF9A61 /* Pods */,
+				87DC4F3B81D016C6DED4B893 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7091AA5D1FB3BE7B0051E6AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7091AA5C1FB3BE7B0051E6AA /* Curious Blossom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7091AA5E1FB3BE7B0051E6AA /* Curious Blossom */ = {
+			isa = PBXGroup;
+			children = (
+				7091AA5F1FB3BE7B0051E6AA /* AppDelegate.swift */,
+				7091AA611FB3BE7B0051E6AA /* ViewController.swift */,
+				7091AA631FB3BE7B0051E6AA /* Main.storyboard */,
+				7091AA661FB3BE7B0051E6AA /* Assets.xcassets */,
+				7091AA681FB3BE7B0051E6AA /* LaunchScreen.storyboard */,
+				7091AA6B1FB3BE7B0051E6AA /* Info.plist */,
+				7091AA711FB3BE9F0051E6AA /* FlowerClassifier.mlmodel */,
+			);
+			path = "Curious Blossom";
+			sourceTree = "<group>";
+		};
+		87DC4F3B81D016C6DED4B893 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2FBB00E69BACE1C8CD23BDA /* Pods_Curious_Blossom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7091AA5B1FB3BE7B0051E6AA /* Curious Blossom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7091AA6E1FB3BE7B0051E6AA /* Build configuration list for PBXNativeTarget "Curious Blossom" */;
+			buildPhases = (
+				5ECBFA0A04997B75F4DAD8F4 /* [CP] Check Pods Manifest.lock */,
+				7091AA581FB3BE7B0051E6AA /* Sources */,
+				7091AA591FB3BE7B0051E6AA /* Frameworks */,
+				7091AA5A1FB3BE7B0051E6AA /* Resources */,
+				BB76C38BC92F4DC92CF2313F /* [CP] Embed Pods Frameworks */,
+				599B577CDBA366AF73790852 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Curious Blossom";
+			productName = "Curious Blossom";
+			productReference = 7091AA5C1FB3BE7B0051E6AA /* Curious Blossom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7091AA541FB3BE7B0051E6AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Seungho Yang";
+				TargetAttributes = {
+					7091AA5B1FB3BE7B0051E6AA = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7091AA571FB3BE7B0051E6AA /* Build configuration list for PBXProject "Curious Blossom" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7091AA531FB3BE7B0051E6AA;
+			productRefGroup = 7091AA5D1FB3BE7B0051E6AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7091AA5B1FB3BE7B0051E6AA /* Curious Blossom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7091AA5A1FB3BE7B0051E6AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7091AA6A1FB3BE7B0051E6AA /* LaunchScreen.storyboard in Resources */,
+				7091AA671FB3BE7B0051E6AA /* Assets.xcassets in Resources */,
+				7091AA651FB3BE7B0051E6AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		599B577CDBA366AF73790852 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Curious Blossom/Pods-Curious Blossom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ECBFA0A04997B75F4DAD8F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Curious Blossom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB76C38BC92F4DC92CF2313F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Curious Blossom/Pods-Curious Blossom-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Curious Blossom/Pods-Curious Blossom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7091AA581FB3BE7B0051E6AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7091AA721FB3BE9F0051E6AA /* FlowerClassifier.mlmodel in Sources */,
+				7091AA621FB3BE7B0051E6AA /* ViewController.swift in Sources */,
+				7091AA601FB3BE7B0051E6AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7091AA631FB3BE7B0051E6AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7091AA641FB3BE7B0051E6AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7091AA681FB3BE7B0051E6AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7091AA691FB3BE7B0051E6AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7091AA6C1FB3BE7B0051E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7091AA6D1FB3BE7B0051E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7091AA6F1FB3BE7B0051E6AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DFAF54FECB28DAD21DD340C /* Pods-Curious Blossom.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q8E7YDS3EB;
+				INFOPLIST_FILE = "Curious Blossom/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SeunghoYang.Curious-Blossom";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7091AA701FB3BE7B0051E6AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C24BDBA796DD3B063BE9E94 /* Pods-Curious Blossom.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q8E7YDS3EB;
+				INFOPLIST_FILE = "Curious Blossom/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SeunghoYang.Curious-Blossom";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7091AA571FB3BE7B0051E6AA /* Build configuration list for PBXProject "Curious Blossom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7091AA6C1FB3BE7B0051E6AA /* Debug */,
+				7091AA6D1FB3BE7B0051E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7091AA6E1FB3BE7B0051E6AA /* Build configuration list for PBXNativeTarget "Curious Blossom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7091AA6F1FB3BE7B0051E6AA /* Debug */,
+				7091AA701FB3BE7B0051E6AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7091AA541FB3BE7B0051E6AA /* Project object */;
+}
