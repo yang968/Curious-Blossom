@@ -19,13 +19,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     
+    var pictureTaken = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
+        
+        self.navigationItem.title = "Press Camera Button"
     }
 
     /// Converts userPickedImage to a CIImage to send it to VNCoreMLModel in detect()
@@ -61,6 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(firstResult.identifier)
             self.navigationItem.title = firstResult.identifier.capitalized
             self.requestInfo(flowerName: firstResult.identifier)
+            self.pictureTaken = true
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
@@ -125,7 +129,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ///
     /// - Parameter sender: <#sender description#>
     @IBAction func cameraPressed(_ sender: Any) {
-        flowerDetailsLabel.text = ""
+        if !pictureTaken {
+            flowerDetailsLabel.text = ""
+        }
+        
         present(imagePicker, animated: true, completion: nil)
     }
     
