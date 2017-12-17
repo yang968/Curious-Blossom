@@ -14,6 +14,7 @@ class LibraryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var flowers : [Flower] = []
+    var flowerName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class LibraryViewController: UIViewController {
         //Register FlowerCell.xib
         tableView.register(UINib(nibName: "FlowerCell", bundle: nil), forCellReuseIdentifier: "customCell")
         tableView.rowHeight = 81
+        
+        navigationController?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +43,7 @@ class LibraryViewController: UIViewController {
         
         do {
             flowers = try managedContext.fetch(fetchRequest)
-            print("Successfully fetched data")
+            print("LibraryVC: Successfully fetched data")
         } catch {
             debugPrint("Could not fetch: " + error.localizedDescription)
         }
@@ -65,9 +68,21 @@ extension LibraryViewController : UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        flowerName = flowers[indexPath.row].name
+        navigationController?.popViewController(animated: true)
+    }
 }
 
-
+extension LibraryViewController : UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if flowerName != "" && flowerName != nil{
+            print("Requesting info from Library VC with flower name: " + flowerName!)
+            (viewController as? MainVC)?.requestInfo(flowerName: flowerName!)
+        }
+    }
+}
 
 
 

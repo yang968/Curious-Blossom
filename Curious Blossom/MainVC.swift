@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainVC.swift
 //  Curious Blossom
 //
 //  Created by Spencer Yang on 11/8/17.
@@ -16,7 +16,7 @@ import CoreData
 
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MainVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var flowerDetailsLabel: UILabel!
     let imagePicker = UIImagePickerController()
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         do {
             flowers = try managedContext.fetch(fetchRequest)
-            print("Successfully fetched data")
+            print("MainVC: Successfully fetched data")
         } catch {
             debugPrint("Could not fetch: " + error.localizedDescription)
         }
@@ -112,8 +112,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
             print(firstResult.identifier)
-            self.navigationItem.title = firstResult.identifier.capitalized
-            self.flowerName = firstResult.identifier.capitalized
             self.requestInfo(flowerName: firstResult.identifier)
             self.pictureTaken = true
         }
@@ -132,6 +130,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ///
     /// - Parameter flowerName: flower identified by FlowerClassifier
     func requestInfo(flowerName: String) {
+        self.flowerName = flowerName.capitalized
         let parameters : [String:String] = [
             "format" : "json",
             "action" : "query",
@@ -175,6 +174,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         saveFlower()
         
         let flowerImageURL = json["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
+        self.navigationItem.title = flowerName
         self.imageView.sd_setImage(with: URL(string: flowerImageURL))
         
         // Use this if you want to save the images downloaded from wikipedia
