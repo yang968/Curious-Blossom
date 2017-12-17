@@ -10,6 +10,7 @@
 		708F9D3B1FE504480002CA38 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F9D3A1FE504480002CA38 /* LibraryViewController.swift */; };
 		708F9D401FE508370002CA38 /* FlowerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708F9D3F1FE508370002CA38 /* FlowerCell.xib */; };
 		708F9D431FE5EEFE0002CA38 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708F9D421FE5EEFE0002CA38 /* CustomCell.swift */; };
+		708F9D881FE6142C0002CA38 /* Curious_Blossom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 708F9D861FE6142C0002CA38 /* Curious_Blossom.xcdatamodeld */; };
 		7091AA601FB3BE7B0051E6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091AA5F1FB3BE7B0051E6AA /* AppDelegate.swift */; };
 		7091AA621FB3BE7B0051E6AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7091AA611FB3BE7B0051E6AA /* ViewController.swift */; };
 		7091AA651FB3BE7B0051E6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7091AA631FB3BE7B0051E6AA /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		708F9D3A1FE504480002CA38 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		708F9D3F1FE508370002CA38 /* FlowerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlowerCell.xib; sourceTree = "<group>"; };
 		708F9D421FE5EEFE0002CA38 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		708F9D871FE6142C0002CA38 /* CuriousBlossom_DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CuriousBlossom_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		7091AA5C1FB3BE7B0051E6AA /* Curious Blossom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curious Blossom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7091AA5F1FB3BE7B0051E6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7091AA611FB3BE7B0051E6AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				7091AA681FB3BE7B0051E6AA /* LaunchScreen.storyboard */,
 				7091AA6B1FB3BE7B0051E6AA /* Info.plist */,
 				7091AA711FB3BE9F0051E6AA /* FlowerClassifier.mlmodel */,
+				708F9D861FE6142C0002CA38 /* Curious_Blossom.xcdatamodeld */,
 			);
 			path = "Curious Blossom";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				7091AA621FB3BE7B0051E6AA /* ViewController.swift in Sources */,
 				708F9D431FE5EEFE0002CA38 /* CustomCell.swift in Sources */,
 				708F9D3B1FE504480002CA38 /* LibraryViewController.swift in Sources */,
+				708F9D881FE6142C0002CA38 /* Curious_Blossom.xcdatamodeld in Sources */,
 				7091AA601FB3BE7B0051E6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +437,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		708F9D861FE6142C0002CA38 /* Curious_Blossom.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				708F9D871FE6142C0002CA38 /* CuriousBlossom_DataModel.xcdatamodel */,
+			);
+			currentVersion = 708F9D871FE6142C0002CA38 /* CuriousBlossom_DataModel.xcdatamodel */;
+			path = Curious_Blossom.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7091AA541FB3BE7B0051E6AA /* Project object */;
 }

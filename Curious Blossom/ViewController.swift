@@ -12,6 +12,9 @@ import Vision
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
@@ -20,6 +23,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     
     var pictureTaken = false
+    var flowers : [Flower] = []
+    
+    var flowerName : String!
+    var flowerImage : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +37,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //self.navigationItem.title = "Press Camera Button"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetchFlowers()
+    }
+    
+    func fetchFlowers() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {
+            return
+        }
+        
+        let fetchRequest = NSFetchRequest<Flower>(entityName: "Flower")
+        
+        do {
+            flowers = try managedContext.fetch(fetchRequest)
+            print("Successfully fetched data")
+        } catch {
+            debugPrint("Could not fetch: " + error.localizedDescription)
+        }
+    }
 
+    func saveFlower() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {
+            return
+        }
+        
+        for flower in flowers {
+            if flower.name == flowerName! {
+                return
+            }
+        }
+        
+        let flower = Flower(context: managedContext)
+        flower.name = flowerName
+        flower.image = UIImageJPEGRepresentation(flowerImage, 1)
+        do {
+            try managedContext.save()
+            print("Successfully saved data")
+        } catch {
+            debugPrint("Could not save: \(error.localizedDescription)")
+        }
+    }
+    
     /// Converts userPickedImage to a CIImage to send it to VNCoreMLModel in detect()
     ///
     /// - Parameters:
@@ -38,6 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ///   - info: Media or Image source
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let userPickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            flowerImage = userPickedImage
             guard let ciImage = CIImage(image: userPickedImage) else {
                 fatalError("Could not Convert to CIImage")
             }
@@ -63,6 +113,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             print(firstResult.identifier)
             self.navigationItem.title = firstResult.identifier.capitalized
+            self.flowerName = firstResult.identifier.capitalized
             self.requestInfo(flowerName: firstResult.identifier)
             self.pictureTaken = true
         }
@@ -121,8 +172,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("Unavailable")
         }
         
+        saveFlower()
+        
         let flowerImageURL = json["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
-        //self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+        self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+        
+        // Use this if you want to save the images downloaded from wikipedia
+        /*
         let manager = SDWebImageManager.shared()
         manager.imageDownloader?.downloadImage(with: URL(string: flowerImageURL), options: .highPriority, progress: nil, completed: { (flowerImage, data, error, downloaded) in
             if downloaded {
@@ -132,6 +188,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("Download failed")
             }
         })
+        */
     }
     
     /// Resets flowerDetailsLabel which shows flower details and allows the user to take a picture using camera
@@ -143,6 +200,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         present(imagePicker, animated: true, completion: nil)
     }
-    
 }
+
+
+
+
+
+
+
+
 

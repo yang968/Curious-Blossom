@@ -17,4 +17,9 @@ class CustomCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureCell(flower: Flower) {
+        flowerNameLabel.text = flower.name
+        flowerImageView.image = UIImage(data: flower.image!)
+    }
 }

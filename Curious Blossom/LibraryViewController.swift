@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class LibraryViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var flowers : [Flower] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,25 @@ class LibraryViewController: UIViewController {
         tableView.rowHeight = 81
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchFlowers()
+    }
+    
+    func fetchFlowers() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {
+            return
+        }
+        
+        let fetchRequest = NSFetchRequest<Flower>(entityName: "Flower")
+        
+        do {
+            flowers = try managedContext.fetch(fetchRequest)
+            print("Successfully fetched data")
+        } catch {
+            debugPrint("Could not fetch: " + error.localizedDescription)
+        }
+    }
 }
 
 extension LibraryViewController : UITableViewDelegate, UITableViewDataSource {
@@ -31,13 +53,15 @@ extension LibraryViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return flowers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? CustomCell else {
+            return UITableViewCell()
+        }
         
-        cell.flowerNameLabel.text = "I'm a Flower"
+        cell.configureCell(flower: flowers[indexPath.row])
         
         return cell
     }
