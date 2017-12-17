@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="81" id="dEg-jL-u0N" customClass="CustomCell" customModule="Curious_Blossom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dEg-jL-u0N" id="g7R-mY-utX">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Bg-4t-Wb6">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="4Gd-8h-9TV"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmU-GT-7PP">
+                        <rect key="frame" x="80" y="0.0" width="295" height="81"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flower Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-Tn-apx">
+                                <rect key="frame" x="22" y="30" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="VeM-IZ-KF4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.66666666666666663" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wm2-Tn-apx" firstAttribute="centerX" secondItem="lmU-GT-7PP" secondAttribute="centerX" id="Hay-Z7-Ufj"/>
+                            <constraint firstItem="wm2-Tn-apx" firstAttribute="centerY" secondItem="lmU-GT-7PP" secondAttribute="centerY" id="LuG-lh-CU5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9Bg-4t-Wb6" firstAttribute="top" secondItem="g7R-mY-utX" secondAttribute="top" id="7lN-kF-EAV"/>
+                    <constraint firstAttribute="trailing" secondItem="lmU-GT-7PP" secondAttribute="trailing" id="BXX-SI-Ri1"/>
+                    <constraint firstAttribute="bottom" secondItem="lmU-GT-7PP" secondAttribute="bottom" id="DFb-ec-wK4"/>
+                    <constraint firstAttribute="bottom" secondItem="9Bg-4t-Wb6" secondAttribute="bottom" id="M2L-RM-krI"/>
+                    <constraint firstItem="lmU-GT-7PP" firstAttribute="leading" secondItem="9Bg-4t-Wb6" secondAttribute="trailing" id="h1C-Rp-SL5"/>
+                    <constraint firstItem="9Bg-4t-Wb6" firstAttribute="leading" secondItem="g7R-mY-utX" secondAttribute="leading" id="pGj-Gt-pts"/>
+                    <constraint firstItem="lmU-GT-7PP" firstAttribute="top" secondItem="g7R-mY-utX" secondAttribute="top" id="pzV-YP-gpm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="flowerImageView" destination="9Bg-4t-Wb6" id="HUh-xk-pr1"/>
+                <outlet property="flowerNameLabel" destination="wm2-Tn-apx" id="EIi-Be-YGX"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="136.5"/>
+        </tableViewCell>
+    </objects>
+</document>

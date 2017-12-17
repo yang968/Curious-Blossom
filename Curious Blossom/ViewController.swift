@@ -28,7 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
         
-        self.navigationItem.title = "Press Camera Button"
+        //self.navigationItem.title = "Press Camera Button"
     }
 
     /// Converts userPickedImage to a CIImage to send it to VNCoreMLModel in detect()
@@ -122,12 +122,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         let flowerImageURL = json["query"]["pages"][pageid]["thumbnail"]["source"].stringValue
-        self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+        //self.imageView.sd_setImage(with: URL(string: flowerImageURL))
+        let manager = SDWebImageManager.shared()
+        manager.imageDownloader?.downloadImage(with: URL(string: flowerImageURL), options: .highPriority, progress: nil, completed: { (flowerImage, data, error, downloaded) in
+            if downloaded {
+                print("Download complete")
+                self.imageView.image = flowerImage
+            } else {
+                print("Download failed")
+            }
+        })
     }
     
     /// Resets flowerDetailsLabel which shows flower details and allows the user to take a picture using camera
     ///
-    /// - Parameter sender: <#sender description#>
     @IBAction func cameraPressed(_ sender: Any) {
         if !pictureTaken {
             flowerDetailsLabel.text = ""
